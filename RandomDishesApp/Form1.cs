@@ -7,19 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Excel.Model;
+using Excel.Factory;
+
 
 namespace RandomDishesApp
 {
     public partial class Form1 : Form
     {
+        
         public Form1()
         {
             InitializeComponent();
         }
-
+        List<Dish> _DishList = null;
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            var Path = "";
+            _DishList = ReadExcel.WorkReadExcel(Path);
         }
 
         private void button1_Click(object sender, EventArgs e)
